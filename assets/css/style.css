@@ -1,0 +1,307 @@
+/* COMMON */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000a12;
+  background-color: #f2f2f2;
+  /* on verifie si on peut utiliser font-smoothing sur CanIUse puis on adapte pour les navigateurs qui ne l'accepteraientt pas : */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+p {
+  line-height: 20px;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+/* chosen town title */
+h1 {
+  font-size: 24px;
+  line-height: 50px;
+  color: #333333;
+  background-color: white;
+  padding: 0 10px 0 20px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+h1:hover {
+  cursor: pointer;
+}
+
+h1 i {
+  color: #00a680;
+  vertical-align: middle;
+}
+
+h1:hover i {
+  color: #19e6b6;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 17px;
+}
+h3 {
+  font-size: 16px;
+  line-height: 20px;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+/* FLEXBOX */
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+/* ICONS */
+.icon-micro {
+  font-size: 12px;
+  /* okayyyyy, c'est la que les chevrons de breadscrumbs se centrent! */
+  vertical-align: middle;
+}
+.icon-small {
+  font-size: 14px;
+}
+.icon-medium {
+  font-size: 22px;
+}
+.icon-large {
+  font-size: 33px;
+}
+
+/* PADDING 
+.pl-20 {
+  padding-left: 20px;
+}*/
+
+/* BUTTONS */
+
+.btn {
+  background-color: rgb(7, 129, 113);
+  color: white;
+  font-size: 14px;
+  line-height: 36px;
+  padding: 0 12px;
+  text-transform: uppercase; /*IMPORTANT*/
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+}
+.btn:hover {
+  background-color: rgb(6, 105, 92);
+}
+
+/* HEADER */
+header {
+  background-color: white;
+  height: 60px;
+  width: 100%;
+  align-items: center;
+}
+header img {
+  width: 180px;
+}
+
+header > div {
+  display: flex;
+  /* un espace entre le logo et la liste de boutons a droite */
+  justify-content: space-between;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: center;
+  align-items: center;
+}
+
+header ul a {
+  display: flex;
+  text-decoration: inherit;
+  flex-direction: column;
+  margin-right: 20px;
+  color: inherit;
+  align-items: center;
+}
+
+header a:hover {
+  color: rgb(7, 129, 113);
+}
+.fixed {
+  position: fixed;
+}
+/* MENU */
+
+menu {
+  display: flex;
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  position: relative;
+  /* tout ca en-dessous je vois pas trop l'utilité */
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+}
+
+/* BANDEAU PATH */
+.breadscrumbs {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  font-size: 11px;
+}
+.breadscrumbs ul {
+  display: flex;
+  /*plus besoin : flex-direction: row;*/
+}
+.breadscrumbs i {
+  padding: 0 5px;
+}
+.breadscrumbs a {
+  /*permet d'avoir le texte au milieu verticalement */
+  line-height: 40px;
+  text-decoration: inherit;
+  color: inherit;
+}
+.breadscrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* CHOSEN TOWN */
+/* == h1 */
+.reset-location {
+  background-color: rgba(0, 10, 18, 0.6);
+  border-radius: 50%;
+  padding: 5px;
+  margin-left: 15px;
+}
+.reset-location i {
+  font-size: 18px;
+  color: white;
+}
+.reset-location hover {
+  background-color: rgba(0, 10, 18, 1);
+  curser: pointer;
+}
+
+/* BANDEAU NAV */
+nav {
+  display: flex;
+  position: absolute;
+  /* ici ne sert a rien mais toujours mettre un depart pour sa position absolue */
+  bottom: -75px;
+  width: 100%;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  align-items: top;
+  background-color: white;
+  padding: 24px 0 10px 0;
+}
+
+nav a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: inherit;
+  color: inherit;
+  text-align: center;
+  margin: 0 46px;
+}
+nav a:hover span {
+  text-decoration: underline;
+}
+nav span {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+}
+nav i {
+  color: #00a680;
+}
+
+/* MAIN */
+main {
+  display: flex;
+  /*flex-direction: row;*/
+}
+.section-left {
+  display: flex;
+  flex: 1;
+  height: 200px;
+  margin-top: 100px;
+  background-color: lawngreen;
+  flex-direction: column;
+}
+.section-center {
+  display: flex;
+  flex: 2;
+  height: 400px;
+  margin-top: 100px;
+  background-color: rgb(200, 236, 164);
+  flex-direction: column;
+}
+.section-right {
+  display: flex;
+  flex: 1;
+  height: 200px;
+  margin-top: 100px;
+  background-color: lawngreen;
+  flex-direction: column;
+}
+
+.section-left div {
+  background-color: white;
+  margin: 0 12px 12px 0;
+  padding: 24px;
+}
+.section-center div {
+  background-color: white;
+  margin: 0 12px 12px 12px;
+  padding: 24px;
+}
+.section-right div {
+  background-color: white;
+  margin: 0 0 12px 12px;
+  padding: 24px;
+}
+
+.limited {
+  max-width: 550px;
+  max-height: 6em;
+  overflow: hidden;
+  /* ellipsis marche paaaaaaaas ! */
+  text-overflow: clip ellipsis;
+}
+
+.section-center h4 {
+  color: #078188;
+}
