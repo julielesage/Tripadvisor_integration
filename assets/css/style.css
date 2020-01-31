@@ -1,8 +1,28 @@
+/* pour le prochain site : nommer des variables pour les couleur de la charte graphique. Ex : 
+:root {
+  --background-color : yellow;
+  --padding-item: 20px;
+}
+PLus tard on peut reprendre ces variables :
+li {
+  background-color: var(--bg-yellow);
+  border: solid 4px red;
+  padding: var(--padding-item);
+  list-style: none;
+}*/
+
+/*-------------------------------------------------------------------------*/
+
 /* COMMON */
+html {
+  /* permet de faire la règle 10px = 1rem */
+  font-size: 62.5%;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  font-size: 1.2rem;
   line-height: 18px;
   color: #000a12;
   background-color: #f2f2f2;
@@ -143,6 +163,9 @@ header {
   height: 60px;
   width: 100%;
   align-items: center;
+  vertical-align: center;
+  position: fixed;
+  z-index: 666;
 }
 header img {
   width: 180px;
@@ -175,6 +198,21 @@ header a:hover {
 .fixed {
   position: fixed;
 }
+.sub-menu {
+  background-color: white;
+  width: 100%;
+  margin-top: 2px;
+  position: fixed;
+  z-index: 667;
+}
+.sub-menu ul {
+  display: flex;
+}
+.sub-menu li {
+  font-size: 14px;
+  padding: 0 30px 0 0;
+  line-height: 40px;
+}
 /* MENU */
 
 menu {
@@ -188,6 +226,9 @@ menu {
   justify-content: center;
   background-position: center;
   margin-bottom: 100px;
+}
+.space {
+  height: 60px;
 }
 
 /* BANDEAU PATH */
@@ -401,9 +442,9 @@ section .p-25 div {
 /* MEILLEURS RESTAURANTS */
 .scroll-bar {
   width: 100%;
-  /* overflow-x: scroll;
-  overflow: hidden; */
-  background-color: red;
+  /* le overflow toujours avant le overflow-x !!!!!!!! IMPORTANCE des regles de priorités : le plus précis écrase le moins*/
+  overflow: hidden;
+  overflow-x: scroll;
 }
 
 /*.scroll-bar::-webkit-scrollbar {
@@ -440,6 +481,36 @@ elles sont déclarées en général en display: none puis changent en mediaqueri
 .visible-768 {
   display: none;
 }
+.hidden {
+  display: none;
+}
+
+/* POP UP FORMULAIRE */
+.modal {
+  display: flex;
+  position: fixed;
+  /* top super important sinon rien ne s'affiche !!*/
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* aux dimensions de l'écran avec viewport */
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  /* par dessus le fixed header */
+  z-index: 668;
+}
+.modal > div {
+  background-color: white;
+  padding: 25px;
+  width: 400px;
+  height: 400px;
+}
+.modal > div i {
+  color: red;
+  cursor: pointer;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 1240px) {
   .container {
@@ -456,7 +527,7 @@ elles sont déclarées en général en display: none puis changent en mediaqueri
   }
   nav li {
     display: flex;
-    Flex: 1;
+    flex: 1;
   }
   nav ul {
     /* avait avant : padding: 24px 0 10px 0;*/
@@ -466,15 +537,12 @@ elles sont déclarées en général en display: none puis changent en mediaqueri
     margin: 0 10px;
   }
 
-
   main > div {
     width: 100%;
   }
   section > div {
     margin: 0;
   }
-  }
-
 }
 
 @media (max-width: 768px) {
@@ -482,10 +550,54 @@ elles sont déclarées en général en display: none puis changent en mediaqueri
     display: none;
   }
   .visible-768 {
-  /*pour les icones speciales mobile*/
-  display: block;
+    /*pour les icones speciales mobile*/
+    display: block;
+    /* pour centrer verticalement des blocs : utiliser line-height */
+    line-height: 50px;
   }
   .container {
     padding: none;
+  }
+  header {
+    height: 50px;
+  }
+
+  /* TRANSFORM : SCALE : redimensionner les images en pourcentage de l'original pour la version tablette/mobile */
+  header img {
+    transform: scale(0.7);
+  }
+  menu {
+    height: 140px;
+    margin-bottom: 200px;
+  }
+  /* rappetisser le paris du milieu */
+  menu > div:nth-child(2) {
+    transform: scale(0.6);
+  }
+  nav {
+    bottom: -185px;
+  }
+  nav ul {
+    /* pour tout afficher sur plusieurs lignes */
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+  nav li {
+    /* pour n'en afficher que 3 par ligne */
+    width: 33.333333%;
+    /* pour ne pas qu'il affiche tout */
+    flex: none;
+    /* pour tout bien centrer */
+    padding: 12px 10px 0 10px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  nav a {
+    transform: scale(0.7);
+  }
+  nav span {
+    font-size: 16px;
+    padding: 5px 0;
   }
 }

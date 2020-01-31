@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/icons.css" />
     <link rel="stylesheet" href="/assets/css/style.css" />
     <title>Tripadvisor, le site par excellence du tourisme</title>
+    <script src="/assets/js/main.js"></script>
   </head>
   <body>
     <header class="d-flex">
@@ -20,9 +21,9 @@
         />
         <i class="icon-medium icon-search visible-768"></i>
         <ul class="hidden-768">
-          <li class="hidden-768">
+          <li>
             <a href="#">
-              <i class="icon-medium icon-plus-c hidden-768"></i>
+              <i class="icon-medium icon-plus-c"></i>
               <span class="hidden-1024">Publier</span>
             </a>
           </li>
@@ -46,15 +47,27 @@
           </li>
           <li>
             <a href="#">
-              <button class="btn">s'inscrire</button>
+              <button class="btn" id="btn-register">s'inscrire</button>
             </a>
           </li>
         </ul>
       </div>
     </header>
+    <div class="space"></div>
+    <div class="container sub-menu hidden">
+      <ul class="container">
+        <li>Hôtels</li>
+        <li>Activités</li>
+        <li>Restaurants</li>
+        <li>Vols</li>
+        <li>Locations Vacances</li>
+        <li>Croisières</li>
+        <li>Plus</li>
+      </ul>
+    </div>
 
     <menu style="background-image: url('./assets/img/paris-header.jpg')">
-      <div class="breadcrumbs">
+      <div class="breadcrumbs hidden-768">
         <div class="container d-flex space-between">
           <ul>
             <li>
@@ -110,7 +123,7 @@
           <li>
             <a href="#"
               ><i class="icon-large icon-vacation-rentals"></i
-              ><span>Locations<br />vacances</span></a
+              ><span>Locations <br class="hidden-768" />vacances</span></a
             >
           </li>
           <li>
@@ -121,7 +134,7 @@
           <li>
             <a href="#"
               ><i class="icon-large icon-more-horizontal"></i
-              ><span>Plus</span></a
+              ><span class="hidden-768">Plus</span></a
             >
           </li>
         </ul>
@@ -279,5 +292,12 @@
         </div>
       </aside>
     </main>
+    <div class="hidden modal">
+      <div>
+        <!-- la fonction switchModal remet le modal en hidden 
+          mais ca marche paaaaaaaaaaaaaaaaaaaaaaa -->
+        <i class="icon-large icon-times" onclick="switchModal()"></i>
+      </div>
+    </div>
   </body>
 </html>
