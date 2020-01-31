@@ -13,33 +13,35 @@
     <header class="d-flex">
       <!--premier header blanc fixe-->
       <div class="container">
+        <i class="icon-medium icon-menu-bars visible-768"></i>
         <img
           src="/assets/img/Tripadvisor_lockup_horizontal_secondary_registered.svg"
           alt="logo Tripadvisor"
         />
-        <ul>
-          <li>
+        <i class="icon-medium icon-search visible-768"></i>
+        <ul class="hidden-768">
+          <li class="hidden-768">
             <a href="#">
-              <i class="icon-medium icon-plus-c"></i>
-              <span>Publier</span>
+              <i class="icon-medium icon-plus-c hidden-768"></i>
+              <span class="hidden-1024">Publier</span>
             </a>
           </li>
           <li>
             <a href="#">
               <i class="icon-medium icon-heart"></i>
-              <span>Voyages</span>
+              <span class="hidden-1024">Voyages</span>
             </a>
           </li>
           <li>
             <a href="#">
               <i class="icon-medium icon-comments"></i>
-              <span>Messages</span>
+              <span class="hidden-1024">Messages</span>
             </a>
           </li>
           <li>
             <a href="#">
               <i class="icon-medium icon-friend"></i>
-              <span>Profil</span>
+              <span class="hidden-1024">Profil</span>
             </a>
           </li>
           <li>
@@ -52,7 +54,7 @@
     </header>
 
     <menu style="background-image: url('./assets/img/paris-header.jpg')">
-      <div class="breadscrumbs">
+      <div class="breadcrumbs">
         <div class="container d-flex space-between">
           <ul>
             <li>
@@ -125,65 +127,157 @@
         </ul>
       </nav>
     </menu>
-    <main class="container d-flex">
-      <section class="section-left">
-        <div>
+    <main class="container">
+      <aside class="hidden-1024">
+        <div class="unlock">
+          <img
+            src="/assets/img/Avatar_stock_PNG_v3.png"
+            alt="Avatar TripAdvisor"
+          />
+          <h3 class="text-center">Débloquez le meilleur de Tripadvisor</h3>
           <ul>
-            <li>image</li>
-            <h4>Débloquez le meilleur de Tripadvisor</h4>
             <li>
-              <i></i>
+              <div class="bullet">&bull;</div>
               <p>
                 Enregistrez vos idées de voyage préférées et affichez-les sur
                 une carte
               </p>
             </li>
             <li>
-              <i></i>
+              <div class="bullet">&bull;</div>
               <p>
                 Recevez des alertes de prix et des offres pour voyager à votre
                 manière
               </p>
             </li>
             <li>
-              <i></i>
+              <div class="bullet">&bull;</div>
               <p>
                 Posez des questions et obtenez des réponses de la part de
                 voyageurs tels que vous
               </p>
             </li>
           </ul>
-          <button class="Inscrivez-vous"></button>
+          <button class="btn-white">Inscrivez-vous</button>
         </div>
-        <div>
-          <h3>Partagez vos conseils de voyage</h3>
+      </aside>
+      <div>
+        <section>
+          <div class="p-25">
+            <h2>Paris, France</h2>
+            <p>
+              Déguster un pain au chocolat à la terrasse d'un café, se délasser
+              après une journée de balade sur les quais de la Seine,
+              s'émerveiller devant des lieux symboliques comme la Tour Eiffel ou
+              l'Arc de triomphe… Un séjour à Paris réussi conjugue activités et
+              détente, tout en prenant le temps de savourer un bon repas tout
+              comme les célèbres expositions
+            </p>
+            <div class="green">
+              Afficher plus<i class="icon-small icon-caret-down"></i>
+            </div>
+          </div>
+          <div class="gallery d-flex">
+            <div
+              style="background-image: url('https://media-cdn.tripadvisor.com/media/photo-f/17/15/6d/d6/paris.jpg');"
+            ></div>
+            <div
+              style="background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/04/c5/48/a2/comedie-tour-eiffel.jpg');"
+            ></div>
+            <div
+              style="background-image: url('https://media-cdn.tripadvisor.com/media/photo-f/07/ba/08/3b/photo0jpg.jpg');"
+            ></div>
+            <div
+              style="background-image: url('https://media-cdn.tripadvisor.com/media/photo-f/08/c9/29/d4/jardines-de-luxemburgo.jpg');"
+            >
+              <div>+ 2 151 864</div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="p-25">
+            <h4>Découvrez le meilleur de Paris</h4>
+            <div class="d-flex space-between">
+              <h3>Meilleurs restaurants à Paris</h3>
+              <h3 class="green">Tout afficher</h3>
+            </div>
+            <ul class="d-flex scroll-bar">
+              <li>
+                <div
+                  class="resto"
+                  style="background-image: url(https://media-cdn.tripadvisor.com/media/photo-f/0f/25/08/0a/le-cheddar.jpg);"
+                >
+                  <i class="icon-medium icon-heart"></i>
+                </div>
+                <p>Il Etait Un Square</p>
+              </li>
+              <li>
+                <div
+                  class="resto"
+                  style="background-image: url(https://media-cdn.tripadvisor.com/media/photo-f/07/6f/96/be/new-jawad-longchamp.jpg);"
+                >
+                  <i class="icon-medium icon-heart"></i>
+                </div>
+                <p>New Jawad Longchamp</p>
+              </li>
+              <li>
+                <div
+                  class="resto"
+                  style="background-image: url(https://media-cdn.tripadvisor.com/media/photo-f/07/6f/96/be/new-jawad-longchamp.jpg);"
+                >
+                  <i class="icon-medium icon-heart"></i>
+                </div>
+                <p>via Emilia</p>
+              </li>
+              <li>
+                <div
+                  class="resto"
+                  style="background-image: url(https://media-cdn.tripadvisor.com/media/photo-i/0e/50/53/e5/jean-yves.jpg);"
+                >
+                  <i class="icon-medium icon-heart"></i>
+                </div>
+                <p>Il Etait Un Square</p>
+              </li>
+              <li>
+                <div
+                  class="resto"
+                  style="background-image: url(https://media-cdn.tripadvisor.com/media/photo-i/14/28/e2/0a/tarte-aux-abricots-revisitee.jpg);"
+                >
+                  <i class="icon-medium icon-heart"></i>
+                </div>
+                <p>Il Etait Un Square</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <aside class="hidden-1024">
+        <div class="explore">
+          <h3>Explorez Paris</h3>
+          <img
+            src="https://media-cdn.tripadvisor.com/media/photo-f/01/75/13/55/tour-eiffel.jpg"
+            alt="Tour Eiffel"
+          />
           <ul>
-            <li><i></i>Publier des photos</li>
-            <li><i></i>Ecrire un avis</li>
+            <li>Hébergements</li>
+            <li><a href="#">Hôtels familiaux</a></li>
+            <li><a href="#">Hôtels 5 étoiles</a></li>
+            <li><a href="#">Hôtels romantiques</a></li>
+          </ul>
+          <ul>
+            <li>Hébergements</li>
+            <li><a href="#">Hôtels familiaux</a></li>
+            <li><a href="#">Hôtel 5 étoiles</a></li>
+            <li><a href="#">Hôtels romantique</a></li>
+          </ul>
+          <ul>
+            <li>Hébergements</li>
+            <li><a href="#">Hôtels familiaux</a></li>
+            <li><a href="#">Hôtel 5 étoiles</a></li>
+            <li><a href="#">Hôtels romantique</a></li>
           </ul>
         </div>
-      </section>
-
-      <section class="section-center"> 
-        <div>
-          <h2>Paris, France</h2>
-<!--comment couper un texte ? il faut qu'il fasse toujours max 4 lignes-->
-          <p class="limited">Déguster un pain au chocolat à la terrasse d'un café, se délasser après une journée de balade sur les quais de la Seine, s'émerveiller devant des lieux symboliques comme la Tour Eiffel ou l'Arc de triomphe… Un séjour à Paris réussi conjugue activités et détente, tout en prenant le temps de savourer un bon repas tout comme les célèbres expositions du Louvre. Commencez par prendre des forces à Notre-Dame, puis partez à la chasse aux bonnes affaires au marché aux puces de Montreuil ou goûtez aux spécialités vendues au marché biologique de Raspail et pour terminer votre journée en beauté, couronnez le tout par un spectacle osé au Moulin Rouge.
-          </p>
-          <h4>Afficher plus <i class="icon-medium icon-caret-down"></i></h4>
-          <div>tableau images 2*2</div>
-        </li></ul>
-      </div>
-      <div>DEFILOIRS</div>
-    </section>
-     
-      <section class="section-right">
-        <div>
-          Explorez Paris
-        </div>
-      </section>
-
+      </aside>
     </main>
-    <footer class="container"></footer>
   </body>
 </html>

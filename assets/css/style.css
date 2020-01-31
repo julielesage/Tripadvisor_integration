@@ -13,7 +13,6 @@ body {
 p {
   line-height: 20px;
   color: #4a4a4a;
-  margin-bottom: 10px;
 }
 /* chosen town title */
 h1 {
@@ -47,17 +46,29 @@ h2 {
 h3 {
   font-size: 16px;
   line-height: 20px;
+  margin-bottom: 15px;
+}
+h4 {
+  font-size: 22px;
+  line-height: 26px;
+  color: #2c2c2c;
 }
 h1,
 h2,
 h3,
 h4 {
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .container {
   width: 1240px;
   margin: 0 auto;
+  padding: 0 25px;
+  /* box-sizing permet d'inclure les padding et 
+  les borders dans la taille specifiee en origine, 
+  pour pas que ca rajoute de la taille. Ici par exemple, pour que les border des images ne modifie pas son div. */
+  box-sizing: border-box;
 }
 
 /* FLEXBOX */
@@ -94,10 +105,13 @@ h4 {
   font-size: 33px;
 }
 
-/* PADDING 
+/* PADDING */
 .pl-20 {
   padding-left: 20px;
-}*/
+}
+.p-25 {
+  padding: 25px;
+}
 
 /* BUTTONS */
 
@@ -116,7 +130,14 @@ h4 {
   background-color: rgb(6, 105, 92);
 }
 
+/* ALIGN */
+
+.text-center {
+  text-align: center;
+}
+
 /* HEADER */
+
 header {
   background-color: white;
   height: 60px;
@@ -148,7 +169,6 @@ header ul a {
   color: inherit;
   align-items: center;
 }
-
 header a:hover {
   color: rgb(7, 129, 113);
 }
@@ -167,30 +187,32 @@ menu {
   align-items: center;
   justify-content: center;
   background-position: center;
+  margin-bottom: 100px;
 }
 
 /* BANDEAU PATH */
-.breadscrumbs {
+
+.breadcrumbs {
   background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
   position: absolute;
   top: 0;
   font-size: 11px;
 }
-.breadscrumbs ul {
+.breadcrumbs ul {
   display: flex;
   /*plus besoin : flex-direction: row;*/
 }
-.breadscrumbs i {
+.breadcrumbs i {
   padding: 0 5px;
 }
-.breadscrumbs a {
+.breadcrumbs a {
   /*permet d'avoir le texte au milieu verticalement */
   line-height: 40px;
   text-decoration: inherit;
   color: inherit;
 }
-.breadscrumbs a:hover {
+.breadcrumbs a:hover {
   text-decoration: underline;
 }
 
@@ -202,13 +224,13 @@ menu {
   padding: 5px;
   margin-left: 15px;
 }
+.reset-location:hover {
+  background-color: rgba(0, 10, 18, 1);
+  cursor: pointer;
+}
 .reset-location i {
   font-size: 18px;
   color: white;
-}
-.reset-location hover {
-  background-color: rgba(0, 10, 18, 1);
-  curser: pointer;
 }
 
 /* BANDEAU NAV */
@@ -251,57 +273,219 @@ nav i {
 /* MAIN */
 main {
   display: flex;
-  /*flex-direction: row;*/
+  /*margin-top : 100px;*/
 }
-.section-left {
-  display: flex;
-  flex: 1;
-  height: 200px;
-  margin-top: 100px;
-  background-color: lawngreen;
-  flex-direction: column;
+main > div {
+  /* flex: 1;  ca peut poser pb avec la scroll-bar */
+  width: 56%;
 }
-.section-center {
-  display: flex;
-  flex: 2;
-  height: 400px;
-  margin-top: 100px;
-  background-color: rgb(200, 236, 164);
-  flex-direction: column;
-}
-.section-right {
-  display: flex;
-  flex: 1;
-  height: 200px;
-  margin-top: 100px;
-  background-color: lawngreen;
-  flex-direction: column;
+main aside {
+  width: 23%;
 }
 
-.section-left div {
+aside > div {
   background-color: white;
-  margin: 0 12px 12px 0;
-  padding: 24px;
-}
-.section-center div {
-  background-color: white;
-  margin: 0 12px 12px 12px;
-  padding: 24px;
-}
-.section-right div {
-  background-color: white;
-  margin: 0 0 12px 12px;
-  padding: 24px;
+  padding: 25px;
+  margin-bottom: 15px;
 }
 
-.limited {
-  max-width: 550px;
-  max-height: 6em;
-  overflow: hidden;
-  /* ellipsis marche paaaaaaaas ! */
-  text-overflow: clip ellipsis;
+/* SUBSCRIBE */
+aside .unlock img {
+  width: 135px;
+  /* pour prendre la largeur entiere du block */
+  display: block;
+  /* et placer l'image au centre avec marges automatiques */
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
-.section-center h4 {
-  color: #078188;
+aside .unlock li {
+  display: flex;
+  margin-bottom: 15px;
+}
+aside .unlock li:last-child {
+  margin-bottom: 35px;
+}
+.bullet {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  color: #4a4a4a;
+  margin-right: 12px;
+}
+.btn-white {
+  line-height: 36px;
+  border: solid 1px #d6d6d6;
+  width: 100%;
+  padding: 0 12px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.btn-white:hover {
+  border-color: #767676;
+  cursor: pointer;
+}
+/* EXPLORE */
+aside .explore a {
+  color: inherit;
+  text-decoration: inherit;
+}
+aside .explore a:hover {
+  text-decoration: underline;
+}
+aside .explore ul li:first-child {
+  font-weight: bold;
+}
+aside .explore li {
+  line-height: 22px;
+}
+aside .explore ul {
+  margin-bottom: 10px;
+}
+aside .explore img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+/* SECTION DU MILIEU  : div du total, 
+section pour chaque coprs blancs,
+ div pour la partie texte + div gallery pour la partie image*/
+section {
+  margin-bottom: 25px;
+}
+section > div {
+  background-color: white;
+  margin: 0 25px;
+}
+section .p-25 div {
+  margin-top: 5px;
+
+  font-weight: bold;
+}
+.green {
+  color: #00a680;
+}
+/* GALLERY */
+.gallery {
+  flex-wrap: wrap;
+}
+.gallery > div {
+  border-bottom: solid 2px white;
+  width: 50%;
+  height: 170px;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+}
+.gallery div:nth-child(even) {
+  border-left: 2px solid white;
+  box-sizing: border-box;
+}
+.gallery div:last-child > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  font-weight: bold;
+}
+
+/* MEILLEURS RESTAURANTS */
+.scroll-bar {
+  width: 100%;
+  /* overflow-x: scroll;
+  overflow: hidden; */
+  background-color: red;
+}
+
+/*.scroll-bar::-webkit-scrollbar {
+  display: none; pour masquer la scrollbar 
+}*/
+.scroll-bar li {
+  /* display: flex;
+  flex-direction: column; */
+  width: 33%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  /* margin-right: 25px; padding a la place */
+  /* pour eviter les petites images en flex 1 car le parent n'a pas de taille en px*/
+  flex: none;
+}
+
+.resto {
+  width: 100%;
+  height: 125px;
+  background-size: cover;
+  position: relative;
+  /*object-fit: cover;
+  object-position: center SI IMG SRC;*/
+}
+.scroll-bar li i {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* VISIBLE */
+/* regroupe les icones visibles uniquement sur mobile
+elles sont déclarées en général en display: none puis changent en mediaqueries */
+
+.visible-768 {
+  display: none;
+}
+/* MEDIA QUERIES */
+@media (max-width: 1240px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hidden-1024 {
+    display: none;
+  }
+  nav {
+    width: 100%;
+  }
+  nav li {
+    display: flex;
+    Flex: 1;
+  }
+  nav ul {
+    /* avait avant : padding: 24px 0 10px 0;*/
+    width: 100%;
+  }
+  nav a {
+    margin: 0 10px;
+  }
+
+
+  main > div {
+    width: 100%;
+  }
+  section > div {
+    margin: 0;
+  }
+  }
+
+}
+
+@media (max-width: 768px) {
+  .hidden-768 {
+    display: none;
+  }
+  .visible-768 {
+  /*pour les icones speciales mobile*/
+  display: block;
+  }
+  .container {
+    padding: none;
+  }
 }
