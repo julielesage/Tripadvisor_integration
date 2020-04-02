@@ -1,4 +1,4 @@
-/* pour le prochain site : nommer des variables pour les couleur de la charte graphique. Ex : 
+/* possibilité : nommer des variables pour les couleur de la charte graphique. Ex : 
 :root {
   --background-color : yellow;
   --padding-item: 20px;
@@ -34,7 +34,9 @@ p {
   line-height: 20px;
   color: #4a4a4a;
 }
-/* chosen town title */
+
+/* chosen town title ***************/
+
 h1 {
   font-size: 24px;
   line-height: 50px;
@@ -80,18 +82,31 @@ h4 {
   font-weight: bold;
   margin-bottom: 10px;
 }
+.normal {
+  font-weight: normal;
+}
+.strong {
+  font-weight: bold;
+}
 
 .container {
   width: 1240px;
   margin: 0 auto;
   padding: 0 25px;
-  /* box-sizing permet d'inclure les padding et 
-  les borders dans la taille specifiee en origine, 
-  pour pas que ca rajoute de la taille. Ici par exemple, pour que les border des images ne modifie pas son div. */
   box-sizing: border-box;
 }
 
-/* FLEXBOX */
+/* COLORS *********************/
+
+.grey {
+  color: grey;
+}
+
+.green {
+  color: #00a680;
+}
+
+/* FLEX-BOX **********************/
 
 .d-flex {
   display: flex;
@@ -109,10 +124,14 @@ h4 {
   justify-content: space-between;
 }
 
-/* ICONS */
+.column {
+  flex-direction: column;
+}
+
+/* ICONS ****************************/
+
 .icon-micro {
   font-size: 12px;
-  /* okayyyyy, c'est la que les chevrons de breadscrumbs se centrent! */
   vertical-align: middle;
 }
 .icon-small {
@@ -125,7 +144,7 @@ h4 {
   font-size: 33px;
 }
 
-/* PADDING */
+/* PADDING ************************/
 .pl-20 {
   padding-left: 20px;
 }
@@ -133,7 +152,11 @@ h4 {
   padding: 25px;
 }
 
-/* BUTTONS */
+.pl-5 {
+  padding-left: 5px;
+}
+
+/* BUTTONS *************************/
 
 .btn {
   background-color: rgb(7, 129, 113);
@@ -156,7 +179,7 @@ h4 {
   text-align: center;
 }
 
-/* HEADER */
+/* HEADER ******************************/
 
 header {
   background-color: white;
@@ -173,7 +196,6 @@ header img {
 
 header > div {
   display: flex;
-  /* un espace entre le logo et la liste de boutons a droite */
   justify-content: space-between;
 }
 
@@ -213,7 +235,8 @@ header a:hover {
   padding: 0 30px 0 0;
   line-height: 40px;
 }
-/* MENU */
+
+/* MENU *************************************/
 
 menu {
   display: flex;
@@ -221,7 +244,6 @@ menu {
   height: 250px;
   background-size: cover;
   position: relative;
-  /* tout ca en-dessous je vois pas trop l'utilité */
   align-items: center;
   justify-content: center;
   background-position: center;
@@ -231,7 +253,7 @@ menu {
   height: 60px;
 }
 
-/* BANDEAU PATH */
+/* BANDEAU PATH **************************************/
 
 .breadcrumbs {
   background-color: rgba(255, 255, 255, 0.8);
@@ -242,13 +264,11 @@ menu {
 }
 .breadcrumbs ul {
   display: flex;
-  /*plus besoin : flex-direction: row;*/
 }
 .breadcrumbs i {
   padding: 0 5px;
 }
 .breadcrumbs a {
-  /*permet d'avoir le texte au milieu verticalement */
   line-height: 40px;
   text-decoration: inherit;
   color: inherit;
@@ -257,12 +277,12 @@ menu {
   text-decoration: underline;
 }
 
-/* CHOSEN TOWN */
-/* == h1 */
+/* CHOSEN TOWN *********************************/
+
 .reset-location {
   background-color: rgba(0, 10, 18, 0.6);
   border-radius: 50%;
-  padding: 5px;
+  padding: 5px 5px 2px 5px;
   margin-left: 15px;
 }
 .reset-location:hover {
@@ -274,11 +294,11 @@ menu {
   color: white;
 }
 
-/* BANDEAU NAV */
+/* BANDEAU NAV **************************/
+
 nav {
   display: flex;
   position: absolute;
-  /* ici ne sert a rien mais toujours mettre un depart pour sa position absolue */
   bottom: -75px;
   width: 100%;
   justify-content: center;
@@ -311,13 +331,12 @@ nav i {
   color: #00a680;
 }
 
-/* MAIN */
+/* MAIN ************************************/
 main {
   display: flex;
-  /*margin-top : 100px;*/
 }
 main > div {
-  /* flex: 1;  ca peut poser pb avec la scroll-bar */
+  /* can't use flex : 1 because sliders */
   width: 56%;
 }
 main aside {
@@ -330,7 +349,23 @@ aside > div {
   margin-bottom: 15px;
 }
 
-/* SUBSCRIBE */
+/* SHARE ***************************/
+aside .share li {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+aside .share i {
+  color: #00a680;
+  margin-right: 10px;
+}
+
+aside .share span {
+  font-weight: bold;
+}
+
+/* SUBSCRIBE ************************/
 aside .unlock img {
   width: 135px;
   /* pour prendre la largeur entiere du block */
@@ -367,7 +402,7 @@ aside .unlock li:last-child {
   border-color: #767676;
   cursor: pointer;
 }
-/* EXPLORE */
+/* EXPLORE *************************************/
 aside .explore a {
   color: inherit;
   text-decoration: inherit;
@@ -394,8 +429,9 @@ aside .explore img {
 }
 
 /* SECTION DU MILIEU  : div du total, 
-section pour chaque coprs blancs,
+section pour chaque corps blancs,
  div pour la partie texte + div gallery pour la partie image*/
+
 section {
   margin-bottom: 25px;
 }
@@ -411,7 +447,8 @@ section .p-25 div {
 .green {
   color: #00a680;
 }
-/* GALLERY */
+/* GALLERY ******************************/
+
 .gallery {
   flex-wrap: wrap;
 }
@@ -439,49 +476,100 @@ section .p-25 div {
   font-weight: bold;
 }
 
-/* MEILLEURS RESTAURANTS */
+/* MEILLEURS RESTAURANTS *****************************/
+
 .scroll-bar {
   width: 100%;
   /* le overflow toujours avant le overflow-x !!!!!!!! IMPORTANCE des regles de priorités : le plus précis écrase le moins*/
   overflow: hidden;
   overflow-x: scroll;
+  margin-bottom: 30px;
 }
 
 /*.scroll-bar::-webkit-scrollbar {
   display: none; pour masquer la scrollbar 
 }*/
+
 .scroll-bar li {
-  /* display: flex;
-  flex-direction: column; */
   width: 33%;
-  padding: 0 10px;
+  padding-right: 20px;
   box-sizing: border-box;
-  /* margin-right: 25px; padding a la place */
-  /* pour eviter les petites images en flex 1 car le parent n'a pas de taille en px*/
+  /* pour eviter les petites images en flex 1 car le parent n'a pas de taille en px : */
   flex: none;
 }
 
 .resto {
   width: 100%;
   height: 125px;
+  border-radius: 5px;
   background-size: cover;
   position: relative;
-  /*object-fit: cover;
-  object-position: center SI IMG SRC;*/
 }
-.scroll-bar li i {
+.scroll-bar li i.heart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+.scroll-bar li i.border {
+  color: white;
   position: absolute;
   top: 0;
   right: 0;
 }
-
-.bullshit-to-scroll {
-  height: 600px;
-  weight: 100%;
-  background-color: #00a680;
+.scroll-bar li i.border:hover {
+  display: none;
+}
+.scroll-bar li i.heart:hover {
+  color: red;
 }
 
-/* POP UP FORMULAIRE */
+/* VOYAGES POPULAIRES *****************************/
+
+.pop li {
+  width: 270px;
+  margin: 20px 5px 20px 0;
+}
+
+.pop img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.white-round {
+  position: relative;
+  top: -35px;
+  left: 25px;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.white-round img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+.pop h3 {
+  margin-top: -30px;
+}
+
+/* POP UP FORMULAIRE
+clic : S'INSCRIRE (vert sur header) ******************/
+
 .modal {
   display: flex;
   position: fixed;
@@ -503,11 +591,47 @@ section .p-25 div {
   height: 400px;
 }
 .modal > div i {
-  color: red;
   cursor: pointer;
+  color: #00a680;
 }
 
-/* VISIBLE */
+.exit {
+  width: 100%;
+  height: 40px;
+  justify-content: flex-end;
+}
+
+.modal .column > img {
+  width: 200px;
+  height: 80px;
+  margin-bottom: 40px;
+}
+
+.connect {
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.connect > img,
+.connect i {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.ou {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+/* VISIBLE ***********************************/
 /* regroupe les icones visibles uniquement sur mobile
 elles sont déclarées en général en display: none puis changent en mediaqueries */
 
@@ -518,7 +642,7 @@ elles sont déclarées en général en display: none puis changent en mediaqueri
   display: none;
 }
 
-/* MEDIA QUERIES */
+/* MEDIA QUERIES *********************************/
 @media (max-width: 1240px) {
   .container {
     width: 100%;
@@ -537,7 +661,7 @@ elles sont déclarées en général en display: none puis changent en mediaqueri
     flex: 1;
   }
   nav ul {
-    /* avait avant : padding: 24px 0 10px 0;*/
+    /* over 1024 : padding: 24px 0 10px 0;*/
     width: 100%;
   }
   nav a {
