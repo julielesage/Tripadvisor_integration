@@ -17,15 +17,10 @@ Here you can find :
 * Floating menu appearing after scrolling
 
 No link, no backend, this is only a CSS work. 
-Please visit here : 
+Please visit here : https://affectionate-lumiere-c6510b.netlify.com/
 
 ## Screenshots
 
-
-<img
-		width="450"
-		alt="Tripadvisor 2- floating menu"
-		src="assets/img/Capture d’écran 2020-04-02 à 23.40.31.png">
     <img
 		width="450"
 		alt="Tripadvisor responsive"
